@@ -3,6 +3,7 @@ import Accordion from "./Components/Accordion";
 import Search from "./Components/Search";
 import Dropdown from "./Components/Dropdown";
 import Translate from "./Components/Translate";
+import Header from "./Components/Header";
 const App = () => {
   const items = [
     {
@@ -27,6 +28,7 @@ const App = () => {
   const [showDropdown, setShowDropdown] = useState(true);
   return (
     <div className="App">
+      <Header/>
       {/* <button
         onClick={() => {
           setShowDropdown(!showDropdown);
