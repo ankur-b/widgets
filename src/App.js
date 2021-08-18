@@ -2,16 +2,20 @@ import React, { useState } from "react";
 import Accordion from "./Components/Accordion";
 import Search from "./Components/Search";
 import Dropdown from "./Components/Dropdown";
+import Translate from "./Components/Translate";
 const App = () => {
   const items = [
-    { title: "t1", content: "c1" },
     {
-      title: "t2",
-      content: "c2",
+      title: "What is React?",
+      content: "React is a front end javascript framework",
     },
     {
-      title: "t3",
-      content: "c3",
+      title: "Why use React?",
+      content: "React is a favorite JS library among engineers",
+    },
+    {
+      title: "How do you use React?",
+      content: "You use React by creating components",
     },
   ];
   const options = [
@@ -23,22 +27,23 @@ const App = () => {
   const [showDropdown, setShowDropdown] = useState(true);
   return (
     <div className="App">
-      <button
+      {/* <button
         onClick={() => {
           setShowDropdown(!showDropdown);
         }}
       >
         Toggle Dropdown
-      </button>
+      </button> */}
       {/* <Accordion items={items}/> */}
       {/* <Search/> */}
-      {showDropdown ? (
+      {/* {showDropdown ? (
         <Dropdown
           selected={selected}
           onSelectChange={setSelected}
           options={options}
         />
-      ) : null}
+      ) : null} */}
+      <Translate/>
     </div>
   );
 };
