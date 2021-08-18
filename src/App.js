@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Route } from "react-router-dom";
 import Accordion from "./Components/Accordion";
 import Search from "./Components/Search";
 import Dropdown from "./Components/Dropdown";
@@ -28,24 +29,23 @@ const App = () => {
   const [showDropdown, setShowDropdown] = useState(true);
   return (
     <div className="App">
-      <Header/>
-      {/* <button
-        onClick={() => {
-          setShowDropdown(!showDropdown);
-        }}
-      >
-        Toggle Dropdown
-      </button> */}
-      {/* <Accordion items={items}/> */}
-      {/* <Search/> */}
-      {/* {showDropdown ? (
+      <Header />
+      <Route exact path="/">
+        <Accordion items={items} />
+      </Route>
+      <Route path="/list">
+        <Search />
+      </Route>
+      <Route path="/dropdown">
         <Dropdown
           selected={selected}
           onSelectChange={setSelected}
           options={options}
         />
-      ) : null} */}
-      <Translate/>
+      </Route>
+      <Route path="/translate">
+        <Translate />
+      </Route>
     </div>
   );
 };
